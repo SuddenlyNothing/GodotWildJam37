@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://Scenes/Characters/StateMachine.gd"
+}, {
+"base": "Node2D",
+"class": "TimeObject",
+"language": "GDScript",
+"path": "res://Scenes/Objects/TimeObject.gd"
 } ]
 _global_script_class_icons={
-"StateMachine": ""
+"StateMachine": "",
+"TimeObject": ""
 }
 
 [application]
