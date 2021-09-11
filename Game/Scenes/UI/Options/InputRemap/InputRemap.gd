@@ -9,7 +9,7 @@ var InputRemapModule := preload("res://Scenes/UI/Options/InputRemap/InputRemapMo
 
 onready var v_box := $V/SC/V
 
-export(PoolStringArray) var user_keys = PoolStringArray(["debug", "up", "left", "down", "right"])
+export(PoolStringArray) var user_keys = PoolStringArray(["debug", "jump", "left", "down", "right"])
 
 #func _ready() -> void:
 #	get_load_user_keys(user_keys)
