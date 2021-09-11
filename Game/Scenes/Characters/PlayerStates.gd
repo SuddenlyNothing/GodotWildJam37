@@ -1,5 +1,6 @@
 extends StateMachine
 
+# init states that get added to the 'states' dictionary
 func _ready() -> void:
 	add_state("idle")
 	add_state("jump")
@@ -7,7 +8,7 @@ func _ready() -> void:
 	add_state("walk")
 	call_deferred("set_state", states.fall)
 
-
+# called every physics frame
 func _state_logic(delta : float) -> void:
 	match state:
 		states.idle:
@@ -25,7 +26,7 @@ func _state_logic(delta : float) -> void:
 			parent.apply_velocity()
 			parent.apply_fall_gravity(delta)
 
-
+# return the value that you want to transition to
 func _get_transition(delta : float):
 	match state:
 		states.idle:
@@ -50,7 +51,7 @@ func _get_transition(delta : float):
 				return states.fall
 	return null
 
-
+# called once when entering state
 func _enter_state(new_state, old_state) -> void:
 	match new_state:
 		states.idle:
@@ -63,7 +64,7 @@ func _enter_state(new_state, old_state) -> void:
 		states.walk:
 			pass
 
-
+# called once when exiting state
 func _exit_state(old_state, new_state) -> void:
 	match old_state:
 		states.idle:

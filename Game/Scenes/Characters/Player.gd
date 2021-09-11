@@ -15,6 +15,7 @@ var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_
 
 var velocity := Vector2.ZERO
 
+
 func apply_fall_gravity(delta : float) -> void:
 	velocity.y += fall_gravity * delta
 
