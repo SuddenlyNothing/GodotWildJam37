@@ -7,8 +7,8 @@ onready var top_collision := $Top/CollisionShape2D
 onready var bottom_collision := $Bottom/CollisionShape2D
 
 var duration = 1
-var top_bound = 294
-var bottom_bound = 98
+var top_bound = 292
+var bottom_bound = 96
 var trans := Tween.TRANS_SINE
 var easing := Tween.EASE_OUT
 

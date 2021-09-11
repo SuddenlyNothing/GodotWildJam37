@@ -5,31 +5,31 @@
 [ext_resource path="res://icon.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 98 )
+extents = Vector2( 32, 96 )
 
 [node name="Gate" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="Top" type="KinematicBody2D" parent="." index="0"]
-position = Vector2( 0, -98 )
+position = Vector2( 0, -96 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="Top" index="0"]
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 64, 196 )
+region_rect = Rect2( 0, 0, 64, 192 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top" index="1"]
 shape = SubResource( 1 )
 
 [node name="Bottom" type="KinematicBody2D" parent="." index="1"]
-position = Vector2( 0, 98 )
+position = Vector2( 0, 96 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="Bottom" index="0"]
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 64, 196 )
+region_rect = Rect2( 0, 0, 64, 192 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" index="1"]
 shape = SubResource( 1 )
