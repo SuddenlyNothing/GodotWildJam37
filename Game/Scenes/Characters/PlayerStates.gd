@@ -11,7 +11,8 @@ func _ready() -> void:
 func _state_logic(delta : float) -> void:
 	match state:
 		states.idle:
-			pass
+			parent.apply_velocity()
+			parent.apply_fall_gravity(delta)
 		states.jump:
 			parent.apply_velocity()
 			parent.apply_jump_gravity(delta)

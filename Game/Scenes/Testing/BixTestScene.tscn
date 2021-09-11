@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Objects/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/Button.tscn" type="PackedScene" id=3]
 
 [node name="BixTestScene" type="Node2D"]
 
@@ -10,3 +11,7 @@ position = Vector2( 478.719, 375.02 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 489.373, 543.353 )
+
+[node name="Button" parent="." instance=ExtResource( 3 )]
+position = Vector2( 605.146, 448.888 )
+target_path = NodePath("../Platform")

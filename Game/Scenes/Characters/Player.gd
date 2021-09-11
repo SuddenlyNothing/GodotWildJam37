@@ -7,6 +7,7 @@ export(float) var move_speed : float = 200.0
 
 onready var coyote_timer := $CoyoteTimer
 onready var jump_buffer := $JumpBuffer
+onready var flip := $Flip
 
 var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
@@ -25,7 +26,7 @@ func apply_jump_gravity(delta : float) -> void:
 func jump():
 	velocity.y = jump_velocity
 
-
+# used for applying x_velocity and changing to walk state
 func get_x_input() -> float:
 	var x_dir := 0.0
 	
@@ -40,3 +41,11 @@ func get_x_input() -> float:
 func apply_velocity():
 	velocity.x = get_x_input() * move_speed
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+# only flips children of flip node
+func set_facing() -> void:
+	var x_dir = get_x_input()
+	if flip.scale.x > 0 and x_dir < 0:
+		flip.scale.x *= -1
+	if flip.scale.x < 0 and x_dir > 0:
+		flip.scale.x *= -1
