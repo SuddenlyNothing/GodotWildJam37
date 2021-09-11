@@ -19,7 +19,7 @@ func change_state(val : int) -> void:
 	elif is_active == true:
 		set_active(false)
 
-# overridable function that inherited scenes will set to change active state
+# overridable function that inherited scenes will set to change active state. Call .set_active(val) when overriding
 func set_active(val : bool) -> void:
 	is_active = val
 	visible = val

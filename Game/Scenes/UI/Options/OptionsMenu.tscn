@@ -8,6 +8,7 @@
 
 [node name="OptionsMenu" type="CanvasLayer"]
 pause_mode = 2
+layer = 64
 script = ExtResource( 2 )
 
 [node name="M" type="MarginContainer" parent="."]
@@ -16,6 +17,10 @@ anchor_left = 0.195312
 anchor_top = 0.0833333
 anchor_right = 0.804688
 anchor_bottom = 0.916667
+margin_left = 0.000518799
+margin_top = 1.90735e-05
+margin_right = 0.000488281
+margin_bottom = 6.10352e-05
 theme = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -53,9 +58,8 @@ margin_right = 586.0
 margin_bottom = 458.0
 
 [node name="Label" type="Label" parent="M/TabContainer/OptionSelect/M/V"]
-margin_left = 191.0
 margin_top = 52.0
-margin_right = 394.0
+margin_right = 586.0
 margin_bottom = 91.0
 size_flags_horizontal = 3
 size_flags_vertical = 6

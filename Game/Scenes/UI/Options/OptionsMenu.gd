@@ -35,6 +35,11 @@ func set_active(val) -> void:
 	active = val
 	$M.visible = val
 	get_tree().paused = val
+	tab_container.current_tab = 0
+#	if val:
+#		$M.rect_position.x = 200
+#	else:
+#		$M.rect_position.x = 99999
 
 
 func load_data() -> void:
