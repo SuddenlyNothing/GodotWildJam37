@@ -7,7 +7,7 @@ var is_active = false
 
 
 func _ready() -> void:
-	yield(get_tree().root, "ready")
+	yield(get_parent(), "ready")
 	set_active(false)
 	hide()
 
@@ -15,17 +15,14 @@ func _ready() -> void:
 func change_state(val : int) -> void:
 	if val in active_times:
 		if is_active == false:
-			is_active = true
 			set_active(true)
-			show()
 	elif is_active == true:
-		is_active = false
 		set_active(false)
-		hide()
 
-# abstract function that inherited scenes will set to change active state
+# overridable function that inherited scenes will set to change active state
 func set_active(val : bool) -> void:
-	pass
+	is_active = val
+	visible = val
 
 
 func set_preview(val : bool) -> void:

@@ -12,10 +12,23 @@ var bottom_bound = 96
 var trans := Tween.TRANS_SINE
 var easing := Tween.EASE_OUT
 
+# set collisions, reset gate positions
+func set_active(val : bool) -> void:
+	top_collision.call_deferred("set_disabled", not val)
+	bottom_collision.call_deferred("set_disabled", not val)
+	if val:
+		top.position.y = -bottom_bound
+		bottom.position.y = bottom_bound
+	else:
+		top.position.y = -bottom_bound
+		bottom.position.y = bottom_bound
+		set_powered(false)
+	.set_active(val)
 
+# open/close gate
 func set_powered(val) -> void:
-#	if not is_active:
-#		return
+	if not is_active:
+		return
 	if val:
 		t.remove_all()
 		t.interpolate_property(top, "position:y", top.position.y, -top_bound, duration, trans, easing)
@@ -27,15 +40,4 @@ func set_powered(val) -> void:
 		t.interpolate_property(bottom, "position:y", bottom.position.y, bottom_bound, duration, trans, easing)
 		t.start()
 
-
-func set_active(val : bool) -> void:
-	top_collision.call_deferred("set_disabled", not val)
-	bottom_collision.call_deferred("set_disabled", not val)
-	if val:
-		top.position.y = -bottom_bound
-		bottom.position.y = bottom_bound
-	else:
-		top.position.y = -bottom_bound
-		bottom.position.y = bottom_bound
-		set_powered(false)
 

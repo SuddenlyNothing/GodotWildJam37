@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Objects/Platform.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Objects/Gate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Testing/BixTestScene.gd" type="Script" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Objects/Spike.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -15,6 +16,8 @@ script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 164.752, 403.612 )
+jump_time_to_peak = 0.1
+jump_time_to_descent = 0.1
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 489.373, 543.353 )
@@ -70,6 +73,10 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 1 )
+
+[node name="Spike" parent="." instance=ExtResource( 7 )]
+position = Vector2( 388.276, 511.375 )
+active_times = PoolIntArray( 1 )
 
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]

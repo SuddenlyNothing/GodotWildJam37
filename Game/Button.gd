@@ -17,7 +17,7 @@ var already_pressed := false
 
 var move_speed := 200
 
-
+# set collisions, move button back in place, reset pressed vars
 func set_active(val : bool) -> void:
 	set_physics_process(val)
 	top_collision.call_deferred("set_disabled", not val)
@@ -33,6 +33,7 @@ func set_active(val : bool) -> void:
 		top.move_and_collide(Vector2(0, normal_y - top.position.y))
 		if get_node(target_path).has_method("set_powered"):
 				get_node(target_path).set_powered(false)
+	.set_active(val)
 
 
 func _on_Area2D_body_entered(body):
@@ -46,7 +47,7 @@ func _on_Area2D_body_exited(body):
 		return
 	pressing = false
 
-
+# move down if player is there, if at the bottom set pressed
 func _physics_process(delta : float) -> void:
 	if pressing:
 		if top.position.y < press_y:

@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="BaseProject"
+config/name="Game"
 run/main_scene="res://Scenes/Testing/BaseTest.tscn"
 config/icon="res://icon.png"
 
