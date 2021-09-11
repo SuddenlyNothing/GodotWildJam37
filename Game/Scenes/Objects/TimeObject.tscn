@@ -2,5 +2,7 @@
 
 [ext_resource path="res://Scenes/Objects/TimeObject.gd" type="Script" id=1]
 
-[node name="TimeObject" type="Node2D"]
+[node name="TimeObject" type="Node2D" groups=[
+"time_object",
+]]
 script = ExtResource( 1 )

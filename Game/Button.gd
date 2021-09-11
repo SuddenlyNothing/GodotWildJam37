@@ -3,6 +3,10 @@ extends TimeObject
 export(NodePath) var target_path
 
 onready var top := $Top
+onready var top_collision := $Top/CollisionShape2D
+onready var area_collision := $Top/Area2D/CollisionShape2D
+onready var base_collision := $Base/CollisionShape2D
+onready var base_collision2 := $Base/CollisionShape2D2
 
 var normal_y := -14
 var pressed_y := 5
@@ -16,6 +20,10 @@ var move_speed := 200
 
 func set_active(val : bool) -> void:
 	set_physics_process(val)
+	top_collision.call_deferred("set_disabled", not val)
+	area_collision.call_deferred("set_disabled", not val)
+	base_collision.call_deferred("set_disabled", not val)
+	base_collision2.call_deferred("set_disabled", not val)
 	if val:
 		pass
 	else:
@@ -23,6 +31,8 @@ func set_active(val : bool) -> void:
 		pressed = false
 		already_pressed = false
 		top.move_and_collide(Vector2(0, normal_y - top.position.y))
+		if get_node(target_path).has_method("set_powered"):
+				get_node(target_path).set_powered(false)
 
 
 func _on_Area2D_body_entered(body):

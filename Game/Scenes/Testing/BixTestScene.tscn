@@ -1,17 +1,76 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Objects/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Gate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Testing/BixTestScene.gd" type="Script" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
 
 [node name="BixTestScene" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 478.719, 375.02 )
+position = Vector2( 164.752, 403.612 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 489.373, 543.353 )
+active_times = PoolIntArray( 1, 2 )
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
 position = Vector2( 605.146, 448.888 )
-target_path = NodePath("../Platform")
+active_times = PoolIntArray( 1 )
+target_path = NodePath("../Gate")
+
+[node name="Gate" parent="." instance=ExtResource( 4 )]
+position = Vector2( 734.502, 306.137 )
+active_times = PoolIntArray( 1, 2 )
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 3.01929
+margin_top = 2.10088
+margin_right = 203.019
+margin_bottom = 102.101
+rect_min_size = Vector2( 200, 100 )
+text = "State 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 204.031
+margin_top = 1.27489
+margin_right = 404.031
+margin_bottom = 101.275
+rect_min_size = Vector2( 200, 100 )
+text = "State 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="."]
+margin_left = 405.513
+margin_top = 1.27489
+margin_right = 605.513
+margin_bottom = 101.275
+rect_min_size = Vector2( 200, 100 )
+text = "State 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 185.575, 475.267 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
