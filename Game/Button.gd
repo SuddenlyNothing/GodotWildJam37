@@ -7,6 +7,7 @@ onready var top_collision := $Top/CollisionShape2D
 onready var area_collision := $Top/Area2D/CollisionShape2D
 onready var base_collision := $Base/CollisionShape2D
 onready var base_collision2 := $Base/CollisionShape2D2
+onready var click := $Click
 
 var normal_y := -14
 var pressed_y := 5
@@ -55,6 +56,7 @@ func _physics_process(delta : float) -> void:
 		elif not already_pressed:
 			pressed = not pressed
 			already_pressed = true
+			click.play()
 			if get_node(target_path).has_method("set_powered"):
 				get_node(target_path).set_powered(pressed)
 	else:
