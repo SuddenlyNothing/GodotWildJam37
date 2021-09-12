@@ -229,6 +229,10 @@ next_scene = "res://Scenes/UI/MainMenu.tscn"
 stream = ExtResource( 5 )
 bus = "SFX"
 
+[node name="Gear2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
+
 [node name="Close" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 6 )
