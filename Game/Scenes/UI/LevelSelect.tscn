@@ -226,7 +226,6 @@ text = "Back"
 next_scene = "res://Scenes/UI/MainMenu.tscn"
 
 [node name="Gear" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
 stream = ExtResource( 5 )
 bus = "SFX"
 
