@@ -1,6 +1,5 @@
 extends Control
 
-# We may need a signal for when the ClockHand finishes animation
 
 var current_time: int = 12 setget set_current_time
 export var hand_rotate_time := 1.0
@@ -18,7 +17,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func set_current_time(val : int) -> void:
-	var old_time := current_time
 	val = wrapi(val, 1, 13)
 	current_time = val
 	_set_clock_hand(current_time)
@@ -41,3 +39,7 @@ func _fix_rotation(rotation: float) -> float:
 	if abs(rotation) > 180:
 		rotation = wrapi(rotation - 360, -180, 180)
 	return rotation
+
+
+func _on_time_changed(old_time, new_time) -> void:
+	current_time = new_time

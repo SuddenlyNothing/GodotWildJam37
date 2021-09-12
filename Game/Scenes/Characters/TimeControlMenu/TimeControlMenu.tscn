@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Characters/TimeControlMenu/TimeControlMenu.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Characters/TimeControlMenu/HourButton.tscn" type="PackedScene" id=2]
+
+[node name="TimeControlMenu" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Hour1" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( 90, -150 )
+region_rect = Rect2( 0, 0, 75, 75 )
+
+[node name="Hour2" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( 150, -80 )
+region_rect = Rect2( 77, 0, 75, 75 )
+
+[node name="Hour3" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( 200, 0 )
+region_rect = Rect2( 154, 0, 75, 75 )
+
+[node name="Hour4" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( 150, 80 )
+region_rect = Rect2( 231, 0, 75, 75 )
+
+[node name="Hour5" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( 90, 150 )
+region_rect = Rect2( 77, 77, 75, 75 )
+
+[node name="Hour6" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( 0, 200 )
+region_rect = Rect2( 77, 77, 75, 75 )
+
+[node name="Hour7" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( -90, 150 )
+region_rect = Rect2( 154, 77, 75, 75 )
+
+[node name="Hour8" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( -150, 80 )
+region_rect = Rect2( 231, 77, 75, 75 )
+
+[node name="Hour9" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( -200, 0 )
+region_rect = Rect2( 0, 154, 75, 75 )
+
+[node name="Hour10" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( -150, -80 )
+region_rect = Rect2( 77, 154, 75, 75 )
+
+[node name="Hour11" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( -90, -150 )
+region_rect = Rect2( 154, 154, 75, 75 )
+
+[node name="Hour12" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( 0, -200 )

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Temp/hour_button_texture.tres" type="Texture" id=1]
+[ext_resource path="res://Scenes/Characters/TimeControlMenu/HourButton.gd" type="Script" id=2]
+
+[node name="HourButton" type="Sprite"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 231, 154, 75, 75 )
+script = ExtResource( 2 )
+
+[node name="SelectionRing" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 0.858824, 0.584314, 0.113725, 1 )
+scale = Vector2( 1.2, 1.2 )
+z_index = -1
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 231, 154, 75, 75 )

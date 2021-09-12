@@ -8,12 +8,18 @@ export(float) var move_speed : float = 200.0
 onready var coyote_timer := $CoyoteTimer
 onready var jump_buffer := $JumpBuffer
 onready var flip := $Flip
+onready var time_control_menu: TimeControlMenu = $TimeControlMenu
 
 var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 
 var velocity := Vector2.ZERO
+
+func _unhandled_input(event: InputEvent) -> void:
+	# Pauses the scene_tree until button is released
+	if event.is_action_pressed("time_control_menu"):
+		time_control_menu.open_menu()
 
 
 func apply_fall_gravity(delta : float) -> void:
