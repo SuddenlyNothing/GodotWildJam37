@@ -4,6 +4,8 @@ onready var sprite := $Sprite
 onready var sprite2 := $Sprite2
 onready var buttons := $Buttons
 onready var t := $Tween
+onready var gear := $Gear
+onready var close := $Close
 
 var level_path := "res://Scenes/Levels/Level_"
 
@@ -21,8 +23,12 @@ func _process(delta : float) -> void:
 func goto_scene(val : int) -> void:
 	if t.is_active():
 		return
+	gear.play()
 	t.interpolate_property(sprite, "rotation_degrees", 0,
 		30+(30*val), 1, Tween.TRANS_EXPO, Tween.EASE_OUT)
+	t.interpolate_property(gear, "pitch_scale", 5, 0.5, 1, Tween.TRANS_EXPO, Tween.EASE_OUT)
 	t.start()
 	yield(t, "tween_all_completed")
+	gear.stop()
+	close.play()
 	Global.goto_scene(level_path + str(val) + ".tscn")
