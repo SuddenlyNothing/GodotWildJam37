@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 onready var tab_container := $M/TabContainer
+onready var menu := $M/TabContainer/OptionSelect/M/V/H/Menu
 
 var active = false setget set_active
 
@@ -36,6 +37,10 @@ func set_active(val) -> void:
 	$M.visible = val
 	get_tree().paused = val
 	tab_container.current_tab = 0
+	if Global.current_scene.name == "MainMenu":
+		menu.hide()
+	else:
+		menu.show()
 #	if val:
 #		$M.rect_position.x = 200
 #	else:
@@ -50,7 +55,5 @@ func load_data() -> void:
 	pass
 
 
-
-
-
-
+func _on_ChangeScene_pressed():
+	set_active(false)

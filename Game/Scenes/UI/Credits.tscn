@@ -1,0 +1,154 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/UI/ChangeScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/UI/Credits.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UI/Themes/BixTheme.tres" type="Theme" id=3]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="V" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="V"]
+margin_left = 460.0
+margin_top = 50.0
+margin_right = 563.0
+margin_bottom = 89.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Credits"
+
+[node name="V" type="VBoxContainer" parent="V"]
+margin_top = 144.0
+margin_right = 1024.0
+margin_bottom = 456.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="H" type="HBoxContainer" parent="V/V"]
+margin_right = 1024.0
+margin_bottom = 47.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="V/V/H"]
+margin_left = 178.0
+margin_top = 4.0
+margin_right = 487.0
+margin_bottom = 43.0
+size_flags_horizontal = 10
+text = "Programmer: Bix Men"
+align = 1
+valign = 1
+
+[node name="BixItch" type="Button" parent="V/V/H"]
+margin_left = 709.0
+margin_right = 852.0
+margin_bottom = 47.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "itch page"
+
+[node name="H4" type="HBoxContainer" parent="V/V"]
+margin_top = 77.0
+margin_right = 1024.0
+margin_bottom = 158.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="V/V/H4"]
+margin_left = 118.0
+margin_right = 487.0
+margin_bottom = 81.0
+size_flags_horizontal = 10
+text = "Programmer: Craig Ostrin
+@protocraig"
+align = 1
+valign = 1
+
+[node name="CraigItch" type="Button" parent="V/V/H4"]
+margin_left = 709.0
+margin_top = 17.0
+margin_right = 852.0
+margin_bottom = 64.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "itch page"
+
+[node name="H2" type="HBoxContainer" parent="V/V"]
+margin_top = 188.0
+margin_right = 1024.0
+margin_bottom = 235.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="V/V/H2"]
+margin_left = 11.0
+margin_top = 4.0
+margin_right = 487.0
+margin_bottom = 43.0
+size_flags_horizontal = 10
+text = "Sound Designer: Giuliano De Pian"
+align = 1
+valign = 1
+
+[node name="ArgyuloYoutube" type="Button" parent="V/V/H2"]
+margin_left = 716.0
+margin_right = 845.0
+margin_bottom = 47.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Youtube"
+
+[node name="H3" type="HBoxContainer" parent="V/V"]
+margin_top = 265.0
+margin_right = 1024.0
+margin_bottom = 312.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="V/V/H3"]
+margin_left = 211.0
+margin_top = 4.0
+margin_right = 487.0
+margin_bottom = 43.0
+size_flags_horizontal = 10
+text = "Artist: ColdCalzone"
+align = 1
+valign = 1
+
+[node name="ColdItch" type="Button" parent="V/V/H3"]
+margin_left = 709.0
+margin_right = 852.0
+margin_bottom = 47.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "itch page"
+
+[node name="ChangeScene" parent="V" instance=ExtResource( 1 )]
+margin_left = 473.0
+margin_top = 506.0
+margin_right = 550.0
+margin_bottom = 553.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Back"
+next_scene = "res://Scenes/UI/MainMenu.tscn"
+
+[connection signal="pressed" from="V/V/H/BixItch" to="." method="_on_BixItch_pressed"]
+[connection signal="pressed" from="V/V/H4/CraigItch" to="." method="_on_CraigItch_pressed"]
+[connection signal="pressed" from="V/V/H2/ArgyuloYoutube" to="." method="_on_ArgyuloYoutube_pressed"]
+[connection signal="pressed" from="V/V/H3/ColdItch" to="." method="_on_ColdItch_pressed"]

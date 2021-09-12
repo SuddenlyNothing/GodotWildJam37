@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Close.wav-07b2ab7debecb4a40034f8e2fff9414d.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Close.wav"
+dest_files=[ "res://.import/Close.wav-07b2ab7debecb4a40034f8e2fff9414d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

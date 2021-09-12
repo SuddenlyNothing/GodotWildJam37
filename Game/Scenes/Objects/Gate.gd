@@ -5,6 +5,8 @@ onready var top := $Top
 onready var bottom := $Bottom
 onready var top_collision := $Top/CollisionShape2D
 onready var bottom_collision := $Bottom/CollisionShape2D
+onready var move := $Move
+onready var stop := $Stop
 
 var duration = 1
 var top_bound = 292
@@ -41,3 +43,10 @@ func set_powered(val) -> void:
 		t.start()
 
 
+func _on_Tween_tween_completed(_object, _key):
+	stop.play()
+	move.stop()
+
+
+func _on_Tween_tween_started(_object, _key):
+	move.play()
