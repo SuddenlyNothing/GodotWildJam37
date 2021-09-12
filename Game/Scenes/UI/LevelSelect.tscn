@@ -1,0 +1,224 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Temp/clock_hand.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/UI/LevelSelect.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UI/Themes/BixTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Scenes/UI/ChangeScene.tscn" type="PackedScene" id=4]
+
+[node name="LevelSelect" type="Control"]
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.4, 0.4 )
+z_index = 1
+texture = ExtResource( 1 )
+offset = Vector2( 0, -202 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.6, 0.6 )
+z_index = 1
+texture = ExtResource( 1 )
+offset = Vector2( 0, -202 )
+
+[node name="Buttons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Buttons"]
+margin_left = 587.0
+margin_top = 58.494
+margin_right = 687.0
+margin_bottom = 108.494
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Buttons"]
+margin_left = 678.506
+margin_top = 150.0
+margin_right = 778.506
+margin_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Buttons"]
+margin_left = 712.0
+margin_top = 275.0
+margin_right = 812.0
+margin_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="Buttons"]
+margin_left = 678.506
+margin_top = 400.0
+margin_right = 778.506
+margin_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="Buttons"]
+margin_left = 587.0
+margin_top = 491.506
+margin_right = 687.0
+margin_bottom = 541.506
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button7" type="Button" parent="Buttons"]
+margin_left = 462.0
+margin_top = 525.0
+margin_right = 562.0
+margin_bottom = 575.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button8" type="Button" parent="Buttons"]
+margin_left = 337.0
+margin_top = 491.506
+margin_right = 437.0
+margin_bottom = 541.506
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button9" type="Button" parent="Buttons"]
+margin_left = 245.494
+margin_top = 400.0
+margin_right = 345.494
+margin_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button10" type="Button" parent="Buttons"]
+margin_left = 212.0
+margin_top = 275.0
+margin_right = 312.0
+margin_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button11" type="Button" parent="Buttons"]
+margin_left = 245.494
+margin_top = 150.0
+margin_right = 345.494
+margin_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button12" type="Button" parent="Buttons"]
+margin_left = 337.0
+margin_top = 58.494
+margin_right = 437.0
+margin_bottom = 108.494
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "11"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Buttons"]
+margin_left = 462.0
+margin_top = 25.0
+margin_right = 562.0
+margin_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 50, 25 )
+toggle_mode = true
+text = "12"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="ChangeScene" parent="." instance=ExtResource( 4 )]
+margin_left = 927.0
+margin_top = 533.0
+margin_right = 1004.0
+margin_bottom = 580.0
+text = "Back"
+next_scene = "res://Scenes/UI/MainMenu.tscn"
