@@ -11,7 +11,6 @@ func _ready() -> void:
 	yield(get_parent(), "ready")
 	set_active(false)
 	hide()
-	print(name + " ready, is_active: " + str(is_active))
 
 # function that other nodes call to change the state
 func change_state(val : int) -> void:
@@ -30,7 +29,7 @@ func preview_state(val : int) -> void:
 	if val in active_times:
 		if is_previewing == false:
 			set_previewing(true)
-	elif is_previewing == true:
+	else:
 		set_previewing(false)
 
 # overridable function that inherited scenes will set to change active state. Call .set_active(val) when overriding
@@ -42,7 +41,6 @@ func set_active(val : bool) -> void:
 # TODO - some sort of indication for currently active objects that will become disabled in
 #		 the previewed state
 func set_previewing(val : bool) -> void:
-	print(name + " set previewing")
 	is_previewing = val
 	
 	# Make sure object is fully visible if it's active in the current state and the previewed state

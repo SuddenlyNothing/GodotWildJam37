@@ -10,8 +10,6 @@ onready var buttons := $Buttons.get_children()
 
 func _ready() -> void:
 	hide()
-	var Hour12: HourButton = buttons[0]
-	Hour12.is_selected = true
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -27,22 +25,27 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called by Player
 func open_menu() -> void:
+	self.selected_time = current_time
 	show()
 	get_tree().paused = true
 
 func close_menu() -> void:
 	hide()
 	get_tree().paused = false
+	show_time_object_previews(current_time)
 
 # Move the selection cursor
 func move_clockwise() -> void:
 	self.selected_time += 1
+	show_time_object_previews(selected_time)
 
 func move_counterclockwise() -> void:
 	self.selected_time -= 1
+	show_time_object_previews(selected_time)
 
 func confirm_selection() -> void:
 	self.current_time = selected_time
+	change_time_object_states(current_time)
 
 
 func change_time_object_states(time : int) -> void:
@@ -51,7 +54,6 @@ func change_time_object_states(time : int) -> void:
 
 func show_time_object_previews(time : int) -> void:
 	get_tree().call_group("time_object", "preview_state", time)
-	print("----call object previews----")
 
 
 func set_current_time(new_time : int) -> void:
@@ -67,8 +69,6 @@ func set_current_time(new_time : int) -> void:
 	var old_button: HourButton = buttons[old_time]
 	selected_button.is_confirmed = true
 	old_button.is_confirmed = false
-	
-	change_time_object_states(current_time)
 
 
 func set_selected_time(new_selection : int) -> void:
@@ -79,7 +79,5 @@ func set_selected_time(new_selection : int) -> void:
 	# Update button states, mostly just shows/hides the selection ring
 	var selected_button: HourButton = buttons[selected_time]
 	var old_button: HourButton = buttons[old_time]
-	selected_button.is_selected = true
 	old_button.is_selected = false
-	
-	show_time_object_previews(selected_time)
+	selected_button.is_selected = true
