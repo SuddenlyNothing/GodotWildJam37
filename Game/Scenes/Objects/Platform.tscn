@@ -9,6 +9,7 @@ extents = Vector2( 128, 32 )
 
 [node name="Platform" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+preview_node_paths = [ NodePath("KinematicBody2D/Sprite") ]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
 

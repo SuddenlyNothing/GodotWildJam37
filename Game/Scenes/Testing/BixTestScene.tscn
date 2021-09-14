@@ -36,6 +36,8 @@ margin_top = 2.10088
 margin_right = 203.019
 margin_bottom = 102.101
 rect_min_size = Vector2( 200, 100 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = "State 1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -47,6 +49,8 @@ margin_top = 1.27489
 margin_right = 404.031
 margin_bottom = 101.275
 rect_min_size = Vector2( 200, 100 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = "State 2"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -58,6 +62,8 @@ margin_top = 1.27489
 margin_right = 605.513
 margin_bottom = 101.275
 rect_min_size = Vector2( 200, 100 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = "State 3"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -6,6 +6,7 @@
 
 [node name="Spike" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+preview_node_paths = [ NodePath("Sprite") ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 rotation = 4.71239

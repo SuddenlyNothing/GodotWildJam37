@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Temp/hour_button_texture.tres" type="Texture" id=1]
+[ext_resource path="res://Assets/Temp/TempTimeButtons-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Characters/TimeControlMenu/HourButton.gd" type="Script" id=2]
 
 [node name="HourButton" type="Sprite"]

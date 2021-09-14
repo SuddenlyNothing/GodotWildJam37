@@ -9,6 +9,8 @@ onready var base_collision := $Base/CollisionShape2D
 onready var base_collision2 := $Base/CollisionShape2D2
 onready var click := $Click
 
+onready var sprite := $Top/Sprite
+
 var normal_y := -14
 var pressed_y := 5
 var press_y := 10
@@ -18,8 +20,15 @@ var already_pressed := false
 
 var move_speed := 200
 
+
+#func _ready() -> void:
+#	sprite.get_material().set_shader_param("is_active", true)
+
+
 # set collisions, move button back in place, reset pressed vars
 func set_active(val : bool) -> void:
+	if sprite.get_material():
+		sprite.get_material().set_shader_param("is_active", val)
 	set_physics_process(val)
 	top_collision.call_deferred("set_disabled", not val)
 	area_collision.call_deferred("set_disabled", not val)

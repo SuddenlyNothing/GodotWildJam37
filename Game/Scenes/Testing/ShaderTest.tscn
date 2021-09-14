@@ -1,13 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Shaders/Preview.tres" type="Material" id=1]
-[ext_resource path="res://Assets/Temp/ShaderHelp.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Temp/ShaderHelp.png" type="Texture" id=3]
 
 [node name="ShaderTest" type="TextureRect"]
 material = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 2 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+use_parent_material = true
+position = Vector2( 620.305, 79.3475 )
+texture = ExtResource( 2 )

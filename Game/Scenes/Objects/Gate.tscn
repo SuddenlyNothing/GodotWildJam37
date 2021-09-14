@@ -9,6 +9,7 @@ extents = Vector2( 32, 96 )
 
 [node name="Gate" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+preview_node_paths = [ NodePath("Top/Sprite"), NodePath("Bottom/Sprite") ]
 
 [node name="Top" type="KinematicBody2D" parent="." index="0"]
 position = Vector2( 0, -96 )
