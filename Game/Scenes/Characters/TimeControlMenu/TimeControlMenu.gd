@@ -47,7 +47,6 @@ func move_counterclockwise() -> void:
 
 func confirm_selection() -> void:
 	self.current_time = selected_time
-	change_time_object_states(current_time)
 
 
 func change_time_object_states(time : int) -> void:
@@ -71,10 +70,11 @@ func set_current_time(new_time : int) -> void:
 	var selected_button: HourButton = buttons[selected_time]
 	old_button.is_confirmed = false
 	selected_button.is_confirmed = true
+	
+	change_time_object_states(current_time)
 
 
 func set_selected_time(new_selection : int) -> void:
-	print(new_selection)
 	var old_time = selected_time
 	selected_time = wrapi(new_selection, 0, 12)
 	
@@ -83,4 +83,3 @@ func set_selected_time(new_selection : int) -> void:
 	var old_button: HourButton = buttons[old_time]
 	old_button.is_selected = false
 	selected_button.is_selected = true
-	print(selected_button.is_selected)

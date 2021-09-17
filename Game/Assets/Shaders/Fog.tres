@@ -53,6 +53,6 @@ shader_param/octaves = 4
 shader_param/starting_amplitude = 0.25
 shader_param/starting_frequency = 1.0
 shader_param/shift = -0.137
-shader_param/velocity = Vector2( 0.03, 0.03 )
+shader_param/velocity = Vector2( 0.05, 0.05 )
 shader_param/fog_color = Color( 1, 1, 1, 1 )
 shader_param/noise = SubResource( 7 )

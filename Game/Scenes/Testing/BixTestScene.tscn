@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Objects/Platform.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Testing/BixTestScene.gd" type="Script" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Objects/Spike.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Objects/PlatformTiles.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -80,7 +81,11 @@ shape = SubResource( 1 )
 
 [node name="Spike" parent="." instance=ExtResource( 7 )]
 position = Vector2( 388.276, 511.375 )
-active_times = PoolIntArray( 1 )
+active_times = PoolIntArray( 1, 0 )
+
+[node name="PlatformTiles" parent="." instance=ExtResource( 8 )]
+position = Vector2( -115.164, 34.789 )
+active_times = PoolIntArray( 0 )
 
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
