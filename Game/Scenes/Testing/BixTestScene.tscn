@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Objects/MovingPlatform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/Button.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Objects/Gate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Testing/BixTestScene.gd" type="Script" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Objects/Spike.tscn" type="PackedScene" id=7]
@@ -15,17 +14,17 @@ extents = Vector2( 32, 32 )
 [node name="BixTestScene" type="Node2D"]
 script = ExtResource( 5 )
 
+[node name="MovingPlatform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 269.95, 484.008 )
+active_times = PoolIntArray( 0, 1, 2, 3 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 479.734, 315.055 )
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
-position = Vector2( 768.067, 442.942 )
+position = Vector2( 636.065, 365.643 )
 active_times = PoolIntArray( 1 )
-target_path = NodePath("../Gate")
-
-[node name="Gate" parent="." instance=ExtResource( 4 )]
-position = Vector2( 924.775, 376.3 )
-active_times = PoolIntArray( 1, 2 )
+target_path = NodePath("../MovingPlatform")
 
 [node name="Button3" type="Button" parent="."]
 margin_left = 3.01929
@@ -83,21 +82,6 @@ active_times = PoolIntArray( 1, 0 )
 position = Vector2( -115.164, 34.789 )
 active_times = PoolIntArray( 0 )
 
-[node name="MovingPlatform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 188.516, 465.19 )
-active_times = PoolIntArray( 0, 1, 0, 0, 0, 5, 6, 7, 8, 9, 10, 11 )
-
-[node name="TargetPosition" parent="MovingPlatform/Targets" index="0"]
-position = Vector2( 189.404, -321.086 )
-
-[node name="Position2D" type="Position2D" parent="MovingPlatform/Targets" index="1"]
-position = Vector2( -198.598, -317.518 )
-__meta__ = {
-"_gizmo_extents_": 40.0
-}
-
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
-
-[editable path="MovingPlatform"]

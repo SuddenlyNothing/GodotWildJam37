@@ -1,3 +1,4 @@
+class_name Player
 extends KinematicBody2D
 
 export(float) var jump_height : float = 150.0
