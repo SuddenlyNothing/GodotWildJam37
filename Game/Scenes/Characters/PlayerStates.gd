@@ -57,6 +57,7 @@ func _enter_state(new_state, old_state) -> void:
 		states.idle:
 			pass
 		states.jump:
+			parent.snap = Vector2.ZERO
 			parent.jump()
 		states.fall:
 			if old_state == states.walk:
@@ -70,7 +71,7 @@ func _exit_state(old_state, new_state) -> void:
 		states.idle:
 			pass
 		states.jump:
-			pass
+			parent.snap = parent.ground_snap
 		states.fall:
 			pass
 		states.walk:
