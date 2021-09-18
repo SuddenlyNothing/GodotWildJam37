@@ -18,7 +18,7 @@ script = ExtResource( 5 )
 position = Vector2( 479.734, 315.055 )
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
-position = Vector2( 640.565, 534.643 )
+position = Vector2( 562.39, 352.639 )
 active_times = PoolIntArray( 1 )
 target_path = NodePath("../MovingPlatform")
 
@@ -92,4 +92,5 @@ position = Vector2( 0, -200 )
 [connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
 
+[editable path="Button"]
 [editable path="MovingPlatform"]

@@ -13,7 +13,7 @@ extents = Vector2( 11, 4.5 )
 extents = Vector2( 10, 1 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 2, 5.5 )
+extents = Vector2( 0.1, 5.5 )
 
 [node name="Button" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
@@ -41,11 +41,11 @@ texture = ExtResource( 3 )
 offset = Vector2( 0, -5.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base" index="1"]
-position = Vector2( -12, -5.5 )
+position = Vector2( -11.9, -5.5 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Base" index="2"]
-position = Vector2( 12, -5.5 )
+position = Vector2( 11.9, -5.5 )
 shape = SubResource( 3 )
 
 [node name="Click" type="AudioStreamPlayer2D" parent="." index="2"]

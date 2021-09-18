@@ -11,14 +11,14 @@ onready var click := $Click
 
 onready var sprite := $Top/Sprite
 
-var normal_y := -14
-var pressed_y := 5
-var press_y := 10
+var normal_y := -13
+var pressed_y := -10
+var press_y := -7.5
 var pressing := false
 var pressed := false
 var already_pressed := false
 
-var move_speed := 200
+var move_speed := 50
 
 
 #func _ready() -> void:
@@ -61,7 +61,7 @@ func _on_Area2D_body_exited(body):
 func _physics_process(delta : float) -> void:
 	if pressing:
 		if top.position.y < press_y:
-			top.move_and_collide(Vector2.DOWN * move_speed * delta)
+			var collision = top.move_and_collide(Vector2.DOWN * move_speed * delta)
 		elif not already_pressed:
 			pressed = not pressed
 			already_pressed = true
