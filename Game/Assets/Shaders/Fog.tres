@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=2]
 
-[sub_resource type="Shader" id=5]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
 // Amount of detail.
@@ -41,18 +41,18 @@ void fragment() {
 	COLOR = mix(vec4(0.0), fog_color, rand(UV + motion));
 }"
 
-[sub_resource type="OpenSimplexNoise" id=6]
+[sub_resource type="OpenSimplexNoise" id=2]
 
-[sub_resource type="NoiseTexture" id=7]
+[sub_resource type="NoiseTexture" id=3]
 seamless = true
-noise = SubResource( 6 )
+noise = SubResource( 2 )
 
 [resource]
-shader = SubResource( 5 )
+shader = SubResource( 1 )
 shader_param/octaves = 4
 shader_param/starting_amplitude = 0.25
 shader_param/starting_frequency = 1.0
 shader_param/shift = -0.137
 shader_param/velocity = Vector2( 0.05, 0.05 )
 shader_param/fog_color = Color( 1, 1, 1, 1 )
-shader_param/noise = SubResource( 7 )
+shader_param/noise = SubResource( 3 )
