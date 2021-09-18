@@ -44,8 +44,7 @@ func set_active(val : bool) -> void:
 	set_deferred("visible", val)
 #	call_deferred("_set_opacity", 1.0)
 
-# TODO - some sort of indication for currently active objects that will become disabled in
-#		 the previewed state
+
 func set_previewing(val : bool) -> void:
 	is_previewing = val
 	
