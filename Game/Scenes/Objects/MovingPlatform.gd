@@ -1,6 +1,7 @@
 extends TimeObject
 
 export(float) var duration := 2.0
+export(bool) var is_powered := true
 
 var target_pos: Vector2
 var trans := Tween.TRANS_SINE
@@ -13,16 +14,21 @@ onready var targets := [origin]
 onready var collision := $KinematicBody2D/CollisionShape2D
 onready var t := $Tween
 
+#var last_pos := position
+#var cur_pos := position
+#var velocity := Vector2.ZERO
 
 func _ready() -> void:
 	init_targets_array()
 	target_pos = targets[target_index]
 
 
-func _physic_process(delta: float) -> void:
-	if not position == target_pos and not t.is_active():
-		tween_to_target()
-		print("tweening from %s to %s" % [position, target_pos])
+# If we want to add the platform's velocity to the player's...
+#func _physics_process(delta: float) -> void:
+#	last_pos = cur_pos
+#	cur_pos = position
+#	var distance_traveled := cur_pos - last_pos
+#	velocity = distance_traveled / delta
 
 
 func tween_to_target() -> void:
@@ -40,17 +46,28 @@ func init_targets_array() -> void:
 func set_active(val : bool) -> void:
 	collision.call_deferred("set_disabled", not val)
 	.set_active(val)
-	
+	handle_tween()
+
+
+func set_powered(val : bool) -> void:
+	if not is_active:
+		return
+	is_powered = val
+	handle_tween()
+
+
+# Platform defaults to powered, so if there's no connected button, it'll just run
+func handle_tween() -> void:
 	# If tween has been activated already, we'll toggle stop/resume
 	if t.is_active():
-		if is_active:
+		if is_active and is_powered:
 			t.resume_all()
 		else:
 			t.stop_all()
 	# If tween hasn't been activated yet, or if we paused it at the very end of 
 	# its last tween, we'll start it for the first time
 	else:
-		if is_active:
+		if is_active and is_powered:
 			tween_to_target()
 
 
