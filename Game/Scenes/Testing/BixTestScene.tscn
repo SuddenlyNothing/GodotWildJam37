@@ -14,19 +14,16 @@ extents = Vector2( 32, 32 )
 [node name="BixTestScene" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="MovingPlatform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 269.95, 484.008 )
-active_times = PoolIntArray( 0, 1, 2, 3 )
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 479.734, 315.055 )
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
-position = Vector2( 636.065, 365.643 )
+position = Vector2( 640.565, 534.643 )
 active_times = PoolIntArray( 1 )
 target_path = NodePath("../MovingPlatform")
 
 [node name="Button3" type="Button" parent="."]
+visible = false
 margin_left = 3.01929
 margin_top = 2.10088
 margin_right = 203.019
@@ -40,6 +37,7 @@ __meta__ = {
 }
 
 [node name="Button4" type="Button" parent="."]
+visible = false
 margin_left = 204.031
 margin_top = 1.27489
 margin_right = 404.031
@@ -53,6 +51,7 @@ __meta__ = {
 }
 
 [node name="Button5" type="Button" parent="."]
+visible = false
 margin_left = 405.513
 margin_top = 1.27489
 margin_right = 605.513
@@ -75,13 +74,22 @@ texture = ExtResource( 6 )
 shape = SubResource( 1 )
 
 [node name="Spike" parent="." instance=ExtResource( 7 )]
-position = Vector2( 388.276, 511.375 )
+position = Vector2( 808.066, 537.538 )
 active_times = PoolIntArray( 1, 0 )
 
 [node name="PlatformTiles" parent="." instance=ExtResource( 8 )]
 position = Vector2( -115.164, 34.789 )
 active_times = PoolIntArray( 0 )
 
+[node name="MovingPlatform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 771.145, 455.891 )
+active_times = PoolIntArray( 0, 1, 2 )
+
+[node name="TargetPosition" parent="MovingPlatform/Targets" index="0"]
+position = Vector2( 0, -200 )
+
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
+
+[editable path="MovingPlatform"]

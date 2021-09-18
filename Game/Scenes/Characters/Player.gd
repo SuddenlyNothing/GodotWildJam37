@@ -11,7 +11,7 @@ onready var jump_buffer := $JumpBuffer
 onready var flip := $Flip
 onready var time_control_menu: TimeControlMenu = $TimeControlMenu
 
-var ground_snap := Vector2.DOWN * 16
+var ground_snap := Vector2.DOWN * 8
 var snap := ground_snap
 onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
