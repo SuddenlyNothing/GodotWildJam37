@@ -13,6 +13,7 @@ func _state_logic(delta : float) -> void:
 	match state:
 		states.idle:
 			parent.apply_fall_gravity(delta)
+			parent.apply_velocity()
 		states.jump:
 			parent.apply_velocity()
 			parent.apply_jump_gravity(delta)

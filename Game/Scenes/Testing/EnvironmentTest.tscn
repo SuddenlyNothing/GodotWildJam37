@@ -244,7 +244,7 @@ tile_data = PoolIntArray( 2621498, 0, 0, 2687024, 1, 0, 3276859, 1, 0, 4587570, 
 
 [node name="PlayerAnimated" parent="." instance=ExtResource( 8 )]
 position = Vector2( 309.001, 292.661 )
-frame = 1
+frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 12 )]
 position = Vector2( 371.045, 267.315 )
