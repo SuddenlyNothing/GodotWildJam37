@@ -12,7 +12,6 @@ func _ready() -> void:
 func _state_logic(delta : float) -> void:
 	match state:
 		states.idle:
-			parent.apply_velocity()
 			parent.apply_fall_gravity(delta)
 		states.jump:
 			parent.apply_velocity()
@@ -49,21 +48,25 @@ func _get_transition(delta : float):
 				return states.jump
 			if not parent.is_on_floor():
 				return states.fall
+			if parent.get_x_input() == 0:
+				return states.idle
 	return null
 
 # called once when entering state
 func _enter_state(new_state, old_state) -> void:
 	match new_state:
 		states.idle:
-			pass
+			parent.player_animated.play("idle")
 		states.jump:
+			parent.player_animated.play("jump")
 			parent.snap = Vector2.ZERO
 			parent.jump()
 		states.fall:
+			parent.player_animated.play("fall")
 			if old_state == states.walk:
 				parent.coyote_timer.start()
 		states.walk:
-			pass
+			parent.player_animated.play("run")
 
 # called once when exiting state
 func _exit_state(old_state, new_state) -> void:

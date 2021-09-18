@@ -7,6 +7,7 @@ export(float) var jump_time_to_descent : float = 0.6
 export(float) var move_speed : float = 200.0
 
 onready var coyote_timer := $CoyoteTimer
+onready var player_animated := $Flip/PlayerAnimated
 onready var jump_buffer := $JumpBuffer
 onready var flip := $Flip
 onready var time_control_menu: TimeControlMenu = $TimeControlMenu
@@ -45,6 +46,7 @@ func get_x_input() -> float:
 	if Input.is_action_pressed("right"):
 		x_dir += 1.0
 	
+	set_facing(x_dir)
 	return x_dir
 
 
@@ -53,9 +55,8 @@ func apply_velocity():
 	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
 
 # only flips children of flip node
-func set_facing() -> void:
-	var x_dir = get_x_input()
-	if flip.scale.x > 0 and x_dir < 0:
+func set_facing(val) -> void:
+	if flip.scale.x > 0 and val < 0:
 		flip.scale.x *= -1
-	if flip.scale.x < 0 and x_dir > 0:
+	if flip.scale.x < 0 and val > 0:
 		flip.scale.x *= -1

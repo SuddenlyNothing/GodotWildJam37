@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MetalMov.wav-62715592bd53dff5f6f674b4a2218f7a.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/MetalMov.wav"
+dest_files=[ "res://.import/MetalMov.wav-62715592bd53dff5f6f674b4a2218f7a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
