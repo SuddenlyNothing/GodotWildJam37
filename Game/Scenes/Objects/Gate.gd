@@ -9,8 +9,8 @@ onready var move := $Move
 onready var stop := $Stop
 
 var duration = 1
-var top_bound = 292
-var bottom_bound = 96
+var top_bound = 100
+var bottom_bound = 40
 var trans := Tween.TRANS_SINE
 var easing := Tween.EASE_OUT
 
