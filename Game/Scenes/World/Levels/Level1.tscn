@@ -20,10 +20,7 @@ visible = false
 position = Vector2( 108, 516 )
 
 [node name="Goal" parent="." index="5"]
-position = Vector2( 871.499, 382.818 )
-
-[node name="Sprite" parent="Goal" index="1"]
-position = Vector2( -211.499, -154.818 )
+position = Vector2( 660, 240 )
 
 [editable path="PlatformsAndObjects/TimeParentBoth/PlatformsBoth"]
 [editable path="PlatformsAndObjects/TimeParent0/PlatformsTime0"]
