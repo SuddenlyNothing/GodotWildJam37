@@ -16,5 +16,8 @@ visible = false
 [node name="PlayerStart" parent="." index="4"]
 position = Vector2( 108, 275 )
 
+[node name="Goal" parent="." index="5"]
+position = Vector2( 694.995, 287.487 )
+
 [editable path="PlatformsAndObjects/PlatformsTime0"]
 [editable path="PlatformsAndObjects/PlatformsTime1"]

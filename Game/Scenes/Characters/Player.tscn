@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Characters/PlayerStates.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Characters/TimeControlMenu/TimeControlMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Characters/PlayerAnimated.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -31,5 +30,3 @@ one_shot = true
 [node name="JumpBuffer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
-
-[node name="TimeControlMenu" parent="." instance=ExtResource( 4 )]

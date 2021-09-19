@@ -3,29 +3,64 @@ extends Node2D
 var player: Player
 var current_time := 0
 
-onready var player_start: Vector2 = $Level1/PlayerStart.position
-onready var current_level := $Level1
+onready var player_start_pos: Vector2 = $Level1/PlayerStart.position
+onready var current_level: Level = $Level1
 onready var camera: Camera2D = $Camera2D
 
 const player_scene := preload("res://Scenes/Characters/Player.tscn")
 
 
 func _ready() -> void:
-	get_tree().call_group("time_object", "change_state", 0)
+	load_level()
 	spawn_player()
 	remove_child(camera)
 	player.add_child(camera)
 
 
 func spawn_player() -> void:
+	if player:
+		player.queue_free()
+	
 	player = player_scene.instance()
+	player.connect("toggle_state", self, "_on_toggle_state")
 	add_child(player)
-	player.position = player_start
+	player.position = player_start_pos
 
 
 func load_level() -> void:
-	var new_level
-	# insert load_level code
+#	var new_level = insert load_level code
+#	current_level = new_level
+
+	player_start_pos = current_level.player_start_pos
+	current_level.goal.connect("body_entered", self, "_on_Goal_body_entered")
+	current_level.fall_kill_zone.connect("body_entered", self, "_on_FallKillZone_body_entered")
 	
-	current_level = new_level
-	player_start = new_level.get_node("PlayerStart")
+	change_time(current_level.starting_time)
+
+
+func go_to_next_level() -> void:
+	# load_level()
+	print("next_level")
+
+
+func player_die() -> void:
+	player.position = player_start_pos
+	change_time(current_level.starting_time)
+
+
+func change_time(time: int) -> void:
+	get_tree().call_group("time_object", "change_state", time)
+
+func _on_toggle_state() -> void:
+	current_time = 1 if current_time == 0 else 0
+	get_tree().call_group("time_object", "change_state", current_time)
+
+
+func _on_Goal_body_entered(body) -> void:
+	if body is Player:
+		go_to_next_level()
+
+
+func _on_FallKillZone_body_entered(body) -> void:
+	if body is Player:
+		player_die()

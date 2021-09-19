@@ -1,6 +1,8 @@
 class_name Player
 extends KinematicBody2D
 
+signal toggle_state
+
 export(float) var jump_height : float = 150.0
 export(float) var jump_time_to_peak : float = 0.4
 export(float) var jump_time_to_descent : float = 0.6
@@ -21,9 +23,8 @@ onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent
 var velocity := Vector2.ZERO
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Pauses the scene_tree until button is released
-	if event.is_action_pressed("time_control_menu"):
-		time_control_menu.open_menu()
+	if event.is_action_pressed("debug"):
+		emit_signal("toggle_state")
 
 
 func apply_fall_gravity(delta : float) -> void:

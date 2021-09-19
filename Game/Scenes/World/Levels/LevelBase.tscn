@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Environment/BrickLight.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Environment/BrickDark.png" type="Texture" id=2]
@@ -7,9 +7,11 @@
 [ext_resource path="res://Assets/Environment/GearAnimatedRight.tres" type="Texture" id=5]
 [ext_resource path="res://Assets/Shaders/Fog.tres" type="Material" id=6]
 [ext_resource path="res://Scenes/Objects/PlatformTiles.tscn" type="PackedScene" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Environment/Chain.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Environment/Box.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Environment/ScaffoldingTiles.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/World/Levels/Level.gd" type="Script" id=12]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -177,7 +179,14 @@ glow_hdr_threshold = 4.0
 2/shapes = [  ]
 2/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 12, 12 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 1000, 12 )
+
 [node name="LevelBase" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -255,10 +264,34 @@ cell_size = Vector2( 4, 4 )
 format = 1
 
 [node name="PlayerStart" type="Position2D" parent="."]
-position = Vector2( 348, 239 )
+position = Vector2( 206.484, 330.569 )
 __meta__ = {
 "_gizmo_extents_": 32.0
 }
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2( 519.46, 339.879 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2( 0, -12 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Goal"]
+position = Vector2( 0, -12 )
+scale = Vector2( 0.375, 0.375 )
+texture = ExtResource( 8 )
+
+[node name="BottomLevelBoundTEMP" type="Position2D" parent="."]
+position = Vector2( 0, 1024 )
+__meta__ = {
+"_gizmo_extents_": 1000.0
+}
+
+[node name="FallKillZone" type="Area2D" parent="."]
+position = Vector2( 1000, 1024 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallKillZone"]
+shape = SubResource( 9 )
 
 [editable path="PlatformsAndObjects/PlatformsTime0"]
 [editable path="PlatformsAndObjects/PlatformsTime1"]
