@@ -215,7 +215,7 @@ margin_right = 1224.0
 margin_bottom = 800.0
 color = Color( 0.76, 0.83, 2, 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Fog" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
@@ -225,7 +225,7 @@ anchor_bottom = 1.0
 margin_right = 1224.0
 margin_bottom = 800.0
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Environment" type="Node2D" parent="."]

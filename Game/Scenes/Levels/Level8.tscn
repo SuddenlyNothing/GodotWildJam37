@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Shaders/Fog.tres" type="Material" id=1]
+[ext_resource path="res://Scenes/Characters/PlayerAnimated.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Levels/Level8.gd" type="Script" id=3]
+[ext_resource path="res://Assets/UI/MainMenu.png" type="Texture" id=4]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_blend_mode = 0
+glow_hdr_threshold = 4.0
+
+[node name="Level8" type="Node2D"]
+script = ExtResource( 3 )
+next_scene = "res://Scenes/Levels/Level1.tscn"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 12240, 8000 )
+
+[node name="Sky" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_right = 12240.0
+margin_bottom = 8000.0
+color = Color( 0.76, 0.83, 2, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Fog" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 12240.0
+margin_bottom = 8000.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PlayerAnimated" parent="." instance=ExtResource( 2 )]
+animation = "fall"
+
+[node name="Camera2D" type="Camera2D" parent="PlayerAnimated"]
+current = true
+zoom = Vector2( 0.7, 0.7 )
+limit_left = -10240
+limit_right = 10240
+limit_bottom = 9000
+smoothing_enabled = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 6000 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 11.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

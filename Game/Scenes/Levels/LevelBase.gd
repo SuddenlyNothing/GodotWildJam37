@@ -37,7 +37,6 @@ func spawn_player() -> void:
 
 
 func change_time(time) -> void:
-	print(time)
 	get_tree().call_group("time_object", "change_state", time)
 	current_time = time
 

@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Levels/LevelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Objects/Dialog.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 72.5692, 58.9873 )
+
+[node name="Level7" instance=ExtResource( 1 )]
+can_toggle_time = false
+
+[node name="StartingPosition" parent="." index="1"]
+position = Vector2( 140.636, 466.013 )
+
+[node name="Platforms" parent="PlatformTiles1" index="0"]
+tile_data = PoolIntArray( 720930, 0, 0, 786466, 0, 0, 852002, 0, 0, 917538, 0, 0, 983074, 0, 0, 1048610, 0, 0, 1114146, 0, 0, 1179678, 0, 0, 1179679, 0, 0, 1179680, 0, 0, 1179690, 0, 0, 1179691, 0, 0, 1179692, 0, 0, 1376278, 0, 0, 1376279, 0, 0, 1376280, 0, 0, 1441804, 0, 0, 1441805, 0, 0, 1441806, 0, 0, 1572916, 0, 0, 1572917, 0, 0, 1572918, 0, 0, 1572919, 0, 0, 1572925, 0, 0, 1572931, 0, 0 )
+
+[node name="Platforms" parent="PlatformTiles2" index="0"]
+tile_data = PoolIntArray( 720936, 0, 0, 786472, 0, 0, 852008, 0, 0, 917544, 0, 0, 983080, 0, 0, 1048616, 0, 0, 1114152, 0, 0, 1179684, 0, 0, 1179685, 0, 0, 1179686, 0, 0, 1179695, 0, 0, 1179696, 0, 0, 1179697, 0, 0, 1179698, 0, 0, 1179699, 0, 0, 1179700, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245231, 0, 0, 1310767, 0, 0, 1376303, 0, 0, 1441809, 0, 0, 1441810, 0, 0, 1441811, 0, 0, 1441839, 0, 0, 1507375, 0, 0, 1507376, 0, 0, 1507377, 0, 0, 1507378, 0, 0, 1507379, 0, 0, 1507380, 0, 0, 1572922, 0, 0, 1572928, 0, 0 )
+
+[node name="Platforms" parent="PlatformTilesAll" index="0"]
+tile_data = PoolIntArray( 458805, 0, 0, 524341, 0, 0, 589877, 0, 0, 655413, 0, 0, 720949, 0, 0, 786485, 0, 0, 852021, 0, 0, 917557, 0, 0, 983091, 0, 0, 983092, 0, 0, 983093, 0, 0, 1048629, 0, 0, 1114165, 0, 0, 1179701, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1572937, 0, 0, 1572938, 0, 0, 1572939, 0, 0, 1572940, 0, 0 )
+
+[node name="Goal" parent="." index="8"]
+position = Vector2( 1819.26, 577.665 )
+next_scene = "res://Scenes/Levels/Level8.tscn"
+
+[node name="Dialog" parent="." index="10" instance=ExtResource( 2 )]
+position = Vector2( 156.648, 486.596 )
+dialog = "Empty..."
+
+[node name="Label" parent="Dialog/CanvasLayer/Control/M" index="0"]
+visible = false
+text = "Empty..."
+
+[node name="CollisionShape2D" parent="Dialog" index="1"]
+position = Vector2( 9.82681, 6.55121 )
+shape = SubResource( 1 )
+
+[editable path="PlatformTiles1"]
+[editable path="PlatformTiles2"]
+[editable path="PlatformTilesAll"]
+[editable path="Dialog"]

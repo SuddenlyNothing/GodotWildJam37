@@ -13,6 +13,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.196078, 0.384314, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="V" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,17 +30,17 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="V"]
 margin_left = 460.0
-margin_top = 50.0
+margin_top = 69.0
 margin_right = 563.0
-margin_bottom = 89.0
+margin_bottom = 108.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Credits"
 
 [node name="V" type="VBoxContainer" parent="V"]
-margin_top = 144.0
+margin_top = 182.0
 margin_right = 1024.0
-margin_bottom = 456.0
+margin_bottom = 417.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 30
@@ -45,12 +53,12 @@ custom_constants/separation = 50
 alignment = 1
 
 [node name="Label" type="Label" parent="V/V/H"]
-margin_left = 178.0
+margin_left = 29.0
 margin_top = 4.0
 margin_right = 487.0
 margin_bottom = 43.0
 size_flags_horizontal = 10
-text = "Programmer: Bix Men"
+text = "Programmer and Artist: Bix Men"
 align = 1
 valign = 1
 
@@ -113,36 +121,11 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 text = "Youtube"
 
-[node name="H3" type="HBoxContainer" parent="V/V"]
-margin_top = 265.0
-margin_right = 1024.0
-margin_bottom = 312.0
-custom_constants/separation = 50
-alignment = 1
-
-[node name="Label" type="Label" parent="V/V/H3"]
-margin_left = 211.0
-margin_top = 4.0
-margin_right = 487.0
-margin_bottom = 43.0
-size_flags_horizontal = 10
-text = "Artist: ColdCalzone"
-align = 1
-valign = 1
-
-[node name="ColdItch" type="Button" parent="V/V/H3"]
-margin_left = 709.0
-margin_right = 852.0
-margin_bottom = 47.0
-size_flags_horizontal = 6
-size_flags_vertical = 4
-text = "itch page"
-
 [node name="ChangeScene" parent="V" instance=ExtResource( 1 )]
 margin_left = 473.0
-margin_top = 506.0
+margin_top = 487.0
 margin_right = 550.0
-margin_bottom = 553.0
+margin_bottom = 534.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Back"
@@ -151,4 +134,3 @@ next_scene = "res://Scenes/UI/MainMenu.tscn"
 [connection signal="pressed" from="V/V/H/BixItch" to="." method="_on_BixItch_pressed"]
 [connection signal="pressed" from="V/V/H4/CraigItch" to="." method="_on_CraigItch_pressed"]
 [connection signal="pressed" from="V/V/H2/ArgyuloYoutube" to="." method="_on_ArgyuloYoutube_pressed"]
-[connection signal="pressed" from="V/V/H3/ColdItch" to="." method="_on_ColdItch_pressed"]

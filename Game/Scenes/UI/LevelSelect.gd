@@ -10,7 +10,7 @@ onready var close := $Close
 
 var started := false
 
-var level_path := "res://Scenes/Levels/Level_"
+var level_path := "res://Scenes/Levels/Level"
 
 func _ready() -> void:
 	var idx := 0
@@ -40,5 +40,4 @@ func goto_scene(val : int) -> void:
 	gear.stop()
 	close.play()
 	yield(close, "finished")
-#	Global.goto_scene(level_path + str(val) + ".tscn")
-	Global.goto_scene(filename)
+	Global.goto_scene(level_path + str(val+1) + ".tscn")
