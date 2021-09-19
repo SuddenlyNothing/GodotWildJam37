@@ -34,6 +34,8 @@ func _get_transition(delta : float):
 				return states.jump
 			if parent.get_x_input() != 0:
 				return states.walk
+			if not parent.is_on_floor():
+				return states.fall
 		states.jump:
 			if parent.velocity.y >= 0 or parent.is_on_ceiling():
 				return states.fall
@@ -59,6 +61,7 @@ func _enter_state(new_state, old_state) -> void:
 		states.idle:
 			parent.player_animated.play("idle")
 		states.jump:
+			parent.jump.play()
 			parent.player_animated.play("jump")
 			parent.snap = Vector2.ZERO
 			parent.jump()
@@ -77,6 +80,6 @@ func _exit_state(old_state, new_state) -> void:
 		states.jump:
 			parent.snap = parent.ground_snap
 		states.fall:
-			pass
+			parent.walk.play()
 		states.walk:
 			pass

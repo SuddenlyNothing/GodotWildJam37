@@ -37,6 +37,9 @@ tile_data = PoolIntArray( 983095, 0, 0, 983096, 0, 0, 983097, 0, 0, 983098, 0, 0
 position = Vector2( 1483.21, 361.173 )
 next_scene = "res://Scenes/Levels/Level7.tscn"
 
+[node name="ToggleTimer" parent="." index="9"]
+wait_time = 1.2
+
 [node name="Dialog" parent="." index="10" instance=ExtResource( 2 )]
 position = Vector2( 159.722, 484.13 )
 dialog = "What's happening? I can't control!?"

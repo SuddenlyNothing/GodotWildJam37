@@ -12,6 +12,7 @@ var player
 var current_time := 0
 
 func _ready() -> void:
+	MusicPlayer.play(1)
 	change_time(current_time)
 	spawn_player()
 	if not can_toggle_time:
@@ -24,7 +25,7 @@ func _process(delta : float) -> void:
 			player.queue_free()
 			spawn_player()
 		camera.position = player.position
-	if Input.is_action_just_pressed("toggle_time"):
+	if Input.is_action_just_pressed("toggle_time") and can_toggle_time:
 		if current_time == 1:
 			change_time(0)
 		else:

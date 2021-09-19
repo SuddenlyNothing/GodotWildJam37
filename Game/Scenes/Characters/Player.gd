@@ -12,6 +12,8 @@ onready var coyote_timer := $CoyoteTimer
 onready var player_animated := $Flip/PlayerAnimated
 onready var jump_buffer := $JumpBuffer
 onready var flip := $Flip
+onready var jump := $Jump
+onready var walk := $Walk
 
 var ground_snap := Vector2.DOWN * 8
 var snap := ground_snap
@@ -64,3 +66,9 @@ func set_facing(val) -> void:
 		flip.scale.x *= -1
 	if flip.scale.x < 0 and val > 0:
 		flip.scale.x *= -1
+
+
+func _on_PlayerAnimated_frame_changed():
+	if player_animated.animation == "run":
+		if player_animated.frame == 0 or player_animated.frame == 3:
+			walk.play()

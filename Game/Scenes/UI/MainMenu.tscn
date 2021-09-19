@@ -18,6 +18,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 anchor_right = 1.0
@@ -42,14 +45,14 @@ __meta__ = {
 margin_right = 824.0
 margin_bottom = 500.0
 size_flags_vertical = 3
-custom_constants/separation = 10
+custom_constants/separation = 12
 alignment = 1
 
 [node name="ChangeScene" parent="ColorRect/MarginContainer/V/V" instance=ExtResource( 2 )]
 margin_left = 378.0
-margin_top = 169.0
+margin_top = 167.0
 margin_right = 446.0
-margin_bottom = 216.0
+margin_bottom = 214.0
 size_flags_horizontal = 4
 text = "Play"
 next_scene = "res://Scenes/UI/LevelSelect.tscn"
@@ -65,9 +68,9 @@ text = "Options"
 
 [node name="ChangeScene3" parent="ColorRect/MarginContainer/V/V" instance=ExtResource( 2 )]
 margin_left = 356.0
-margin_top = 283.0
+margin_top = 285.0
 margin_right = 467.0
-margin_bottom = 330.0
+margin_bottom = 332.0
 size_flags_horizontal = 4
 text = "Credits"
 next_scene = "res://Scenes/UI/Credits.tscn"

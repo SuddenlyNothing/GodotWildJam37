@@ -241,12 +241,3 @@ bus = "SFX"
 pause_mode = 2
 stream = ExtResource( 6 )
 bus = "SFX"
-
-[node name="Label" type="Label" parent="."]
-margin_left = 229.289
-margin_top = 218.766
-margin_right = 510.289
-margin_bottom = 299.766
-rect_rotation = -47.4758
-text = "not enouch time :(
-Maybe later? :D"
