@@ -45,15 +45,21 @@ func go_to_next_level() -> void:
 
 func player_die() -> void:
 	player.position = player_start_pos
-	change_time(current_level.starting_time)
+	current_time = current_level.starting_time
+	change_time(current_time)
 
 
 func change_time(time: int) -> void:
 	get_tree().call_group("time_object", "change_state", time)
 
+
 func _on_toggle_state() -> void:
-	current_time = 1 if current_time == 0 else 0
-	get_tree().call_group("time_object", "change_state", current_time)
+	if current_time == 0:
+		current_time = 1
+	elif current_time == 1:
+		current_time = 0
+	
+	change_time(current_time)
 
 
 func _on_Goal_body_entered(body) -> void:

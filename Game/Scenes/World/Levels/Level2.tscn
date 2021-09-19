@@ -22,21 +22,36 @@ tile_data = PoolIntArray(  )
 tile_data = PoolIntArray(  )
 
 [node name="Platforms" parent="PlatformsAndObjects/TimeParentBoth/PlatformsBoth" index="0"]
-tile_data = PoolIntArray( 1966091, 0, 0, 1966092, 0, 0, 1966093, 0, 0, 1966094, 0, 0, 1966095, 0, 0, 2293763, 0, 0, 2293764, 0, 0, 2293765, 0, 0, 2293766, 0, 0, 2293767, 0, 0 )
+tile_data = PoolIntArray( 1179689, 0, 0, 1179690, 0, 0, 1179691, 0, 0, 1179692, 0, 0, 1179693, 0, 0, 1179694, 0, 0, 1179695, 0, 0, 1966091, 0, 0, 1966092, 0, 0, 1966093, 0, 0, 1966094, 0, 0, 1966095, 0, 0, 2293763, 0, 0, 2293764, 0, 0, 2293765, 0, 0, 2293766, 0, 0, 2293767, 0, 0 )
 
 [node name="MovingPlatform" parent="PlatformsAndObjects/TimeParentBoth" index="1" instance=ExtResource( 3 )]
 position = Vector2( 432, 636 )
+active_times = PoolIntArray( 0, 1 )
 is_powered = false
 
 [node name="TargetPosition" parent="PlatformsAndObjects/TimeParentBoth/MovingPlatform/Targets" index="0"]
 position = Vector2( 0, 96 )
 
-[node name="Platforms" parent="PlatformsAndObjects/TimeParent1/PlatformsTime1" index="0"]
-tile_data = PoolIntArray( 2162696, 0, 0, 2162697, 0, 0, 2162698, 0, 0 )
+[node name="MovingPlatform2" parent="PlatformsAndObjects/TimeParentBoth" index="2" instance=ExtResource( 3 )]
+position = Vector2( 924, 660 )
+active_times = PoolIntArray( 0, 1 )
+duration = 3.0
 
-[node name="Button" parent="PlatformsAndObjects/TimeParent1" index="1" instance=ExtResource( 2 )]
+[node name="TargetPosition" parent="PlatformsAndObjects/TimeParentBoth/MovingPlatform2/Targets" index="0"]
+position = Vector2( 0, -288 )
+
+[node name="Button" parent="PlatformsAndObjects/TimeParent0" index="1" instance=ExtResource( 2 )]
 position = Vector2( 300.081, 720.034 )
+active_times = PoolIntArray( 0 )
 target_path = NodePath("../../TimeParentBoth/MovingPlatform")
+
+[node name="Button2" parent="PlatformsAndObjects/TimeParent0" index="2" instance=ExtResource( 2 )]
+position = Vector2( 780, 624 )
+active_times = PoolIntArray( 0 )
+target_path = NodePath("../../TimeParentBoth/MovingPlatform2")
+
+[node name="Platforms" parent="PlatformsAndObjects/TimeParent1/PlatformsTime1" index="0"]
+tile_data = PoolIntArray( 1507358, 0, 0, 1507359, 0, 0, 1507360, 0, 0, 1507361, 0, 0, 1507362, 0, 0, 1572894, 0, 0, 1572898, 0, 0, 1638421, 0, 0, 1638422, 0, 0, 1638423, 0, 0, 1638424, 0, 0, 1638425, 0, 0, 1638426, 0, 0, 1638427, 0, 0, 1638430, 0, 0, 1638434, 0, 0, 1703966, 0, 0, 1703967, 0, 0, 1703968, 0, 0, 1703969, 0, 0, 1703970, 0, 0, 2162696, 0, 0, 2162697, 0, 0, 2162698, 0, 0 )
 
 [node name="Foreground" parent="." index="3"]
 visible = false
@@ -45,9 +60,10 @@ visible = false
 position = Vector2( 132.368, 833.337 )
 
 [node name="Goal" parent="." index="5"]
-position = Vector2( 719.363, 845.824 )
+position = Vector2( 1092, 432 )
 
 [editable path="PlatformsAndObjects/TimeParentBoth/PlatformsBoth"]
 [editable path="PlatformsAndObjects/TimeParentBoth/MovingPlatform"]
+[editable path="PlatformsAndObjects/TimeParentBoth/MovingPlatform2"]
 [editable path="PlatformsAndObjects/TimeParent0/PlatformsTime0"]
 [editable path="PlatformsAndObjects/TimeParent1/PlatformsTime1"]
