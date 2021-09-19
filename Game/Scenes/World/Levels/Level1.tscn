@@ -17,7 +17,7 @@ tile_data = PoolIntArray( 196631, 0, 0, 196632, 0, 0, 589847, 0, 0, 589848, 0, 0
 visible = false
 
 [node name="PlayerStart" parent="." index="4"]
-position = Vector2( 108, 516 )
+position = Vector2( 108, 504 )
 
 [node name="Goal" parent="." index="5"]
 position = Vector2( 660, 240 )
