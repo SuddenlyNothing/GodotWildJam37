@@ -3,8 +3,8 @@ extends Node2D
 var player: Player
 var current_time := 0
 
-onready var player_start_pos: Vector2 = $Level1/PlayerStart.position
-onready var current_level: Level = $Level1
+onready var current_level: Level = $LevelParent.get_child(0)
+onready var player_start_pos: Vector2 = current_level.player_start_pos
 onready var camera: Camera2D = $Camera2D
 
 const player_scene := preload("res://Scenes/Characters/Player.tscn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/World/World.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/World/Levels/Level1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/World/Levels/Level2.tscn" type="PackedScene" id=2]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,4 +16,6 @@ limit_bottom = 1024
 limit_smoothed = true
 smoothing_enabled = true
 
-[node name="Level1" parent="." instance=ExtResource( 2 )]
+[node name="LevelParent" type="Node2D" parent="."]
+
+[node name="Level2" parent="LevelParent" instance=ExtResource( 2 )]

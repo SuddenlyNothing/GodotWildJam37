@@ -11,6 +11,9 @@ extents = Vector2( 12, 18 )
 "player",
 ]]
 script = ExtResource( 2 )
+jump_height = 75.0
+jump_time_to_peak = 0.2
+jump_time_to_descent = 0.3
 
 [node name="PlayerStates" type="Node" parent="."]
 script = ExtResource( 3 )
@@ -18,6 +21,7 @@ script = ExtResource( 3 )
 [node name="Flip" type="Node2D" parent="."]
 
 [node name="PlayerAnimated" parent="Flip" instance=ExtResource( 5 )]
+frame = 2
 offset = Vector2( 0, -2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
