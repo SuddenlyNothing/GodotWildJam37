@@ -8,14 +8,15 @@ var level_index := 0
 
 # The LevelParent is so you can easily test levels by adding/deleting them
 # to the World scene. It shouldn't be necessarily for release
-onready var current_level: Level = $LevelParent.get_child(0)
-onready var player_start_pos: Vector2 = current_level.player_start_pos
+var current_level: Level
+var player_start_pos: Vector2
 onready var camera: Camera2D = $Camera2D
 
 const player_scene := preload("res://Scenes/Characters/Player.tscn")
 
 
 func _ready() -> void:
+	load_level(levels[0])
 	setup_current_level()
 
 

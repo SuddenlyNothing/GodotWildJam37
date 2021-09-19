@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/World/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/World/Levels/Level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/World/Levels/Level2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/World/Levels/Level3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/World/Levels/Level4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/World/Levels/Level5.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
-levels = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+levels = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -50 )
@@ -18,7 +20,3 @@ limit_top = 0
 limit_bottom = 1024
 limit_smoothed = true
 smoothing_enabled = true
-
-[node name="LevelParent" type="Node2D" parent="."]
-
-[node name="Level3" parent="LevelParent" instance=ExtResource( 4 )]
