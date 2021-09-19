@@ -40,9 +40,11 @@ func set_active(val : bool) -> void:
 		pressing = false
 		pressed = false
 		already_pressed = false
-		top.move_and_collide(Vector2(0, normal_y - top.position.y))
-		if get_node(target_path).has_method("set_powered"):
-				get_node(target_path).set_powered(false)
+#		top.move_and_collide(Vector2(0, normal_y - top.position.y))
+		top.position = Vector2(0, normal_y)
+		var node = get_node_or_null(target_path)
+		if node and node.has_method("set_powered"):
+				node.set_powered(false)
 	.set_active(val)
 
 
@@ -61,7 +63,8 @@ func _on_Area2D_body_exited(body):
 func _physics_process(delta : float) -> void:
 	if pressing:
 		if top.position.y < press_y:
-			var collision = top.move_and_collide(Vector2.DOWN * move_speed * delta)
+#			top.move_and_collide(Vector2.DOWN * move_speed * delta)
+			top.position += Vector2.DOWN * move_speed * delta
 		elif not already_pressed:
 			pressed = not pressed
 			already_pressed = true
@@ -72,8 +75,10 @@ func _physics_process(delta : float) -> void:
 		already_pressed = false
 		if pressed:
 			if top.position.y > pressed_y:
-				top.move_and_collide(Vector2.UP * move_speed * delta)
+#				top.move_and_collide(Vector2.UP * move_speed * delta)
+				top.position += Vector2.UP * move_speed * delta
 		else:
 			if top.position.y > normal_y:
-				top.move_and_collide(Vector2.UP * move_speed * delta)
+#				top.move_and_collide(Vector2.UP * move_speed * delta)
+				top.position += Vector2.UP * move_speed * delta
 

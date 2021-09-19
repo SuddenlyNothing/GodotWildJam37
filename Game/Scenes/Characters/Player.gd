@@ -12,7 +12,6 @@ onready var coyote_timer := $CoyoteTimer
 onready var player_animated := $Flip/PlayerAnimated
 onready var jump_buffer := $JumpBuffer
 onready var flip := $Flip
-onready var time_control_menu: TimeControlMenu = $TimeControlMenu
 
 var ground_snap := Vector2.DOWN * 8
 var snap := ground_snap
@@ -21,13 +20,17 @@ onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * 
 onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 
 var velocity := Vector2.ZERO
+var max_fall_speed := 600
+
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("debug"):
+	if event.is_action_pressed("toggle_time"):
 		emit_signal("toggle_state")
 
 
 func apply_fall_gravity(delta : float) -> void:
+	if velocity.y > max_fall_speed:
+		return
 	velocity.y += fall_gravity * delta
 
 

@@ -10,7 +10,7 @@ var cps := 25
 
 func _ready() -> void:
 	label.hide()
-	set_active(true)
+#	set_active(true)
 
 
 func set_text(text) -> void:
@@ -31,14 +31,12 @@ func _on_Dialog_body_exited(body) -> void:
 
 
 func set_active(val : bool) -> void:
+	label.visible = val
 	if val:
 		var total_chars : float = label.text.length()
 		var duration : float = total_chars/cps
-		print(duration)
 		t.interpolate_property(label, "percent_visible", 0, 1, duration)
 		t.start()
 	else:
-		if t.is_active():
-			yield(t, "tween_all_completed")
+		t.remove_all()
 		label.visible_characters = 0
-	label.visible = val

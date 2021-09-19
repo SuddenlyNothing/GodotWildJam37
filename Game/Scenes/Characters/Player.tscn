@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Characters/PlayerAnimated.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 18 )
+extents = Vector2( 9, 18 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
@@ -22,7 +22,7 @@ script = ExtResource( 3 )
 [node name="Flip" type="Node2D" parent="."]
 
 [node name="PlayerAnimated" parent="Flip" instance=ExtResource( 5 )]
-frame = 0
+frame = 2
 offset = Vector2( 0, -2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

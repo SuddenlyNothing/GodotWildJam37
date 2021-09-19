@@ -19,7 +19,7 @@ extents = Vector2( 0.1, 5.5 )
 script = ExtResource( 1 )
 preview_node_paths = [ NodePath("Top/Sprite"), NodePath("Base/Sprite2") ]
 
-[node name="Top" type="KinematicBody2D" parent="." index="0"]
+[node name="Top" type="StaticBody2D" parent="." index="0"]
 position = Vector2( 0, -15.5 )
 
 [node name="Sprite" type="Sprite" parent="Top" index="0"]

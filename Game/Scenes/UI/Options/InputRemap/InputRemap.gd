@@ -10,7 +10,7 @@ var InputRemapModule := preload("res://Scenes/UI/Options/InputRemap/InputRemapMo
 onready var v_box := $V/SC/V
 
 export(PoolStringArray) var user_keys = PoolStringArray([
-		"jump", "left", "right", "progress_time", "regress_time", "cancel_time_selection"
+		"jump", "left", "right", "toggle_time"
 	])
 
 #func _ready() -> void:
@@ -20,7 +20,7 @@ export(PoolStringArray) var user_keys = PoolStringArray([
 func get_load_user_keys(actions:Array) -> void:
 	for action in actions:
 		var input_remap_module = InputRemapModule.instance()
-		input_remap_module.get_child(0).text = action.replace("-", " ")
+		input_remap_module.get_child(0).text = action.replace("_", " ")
 		v_box.add_child(input_remap_module)
 		for input in InputMap.get_action_list(action):
 			if not input is InputEventKey:
