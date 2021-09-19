@@ -39,7 +39,7 @@ func load_level(level_to_load: PackedScene) -> void:
 	current_level = new_level
 	add_child(current_level)
 	setup_current_level()
-	
+
 
 func setup_current_level() -> void:
 	if not current_level:
@@ -74,7 +74,8 @@ func change_time(time: int) -> void:
 
 
 func you_win_the_game() -> void:
-	print("wowwwwwwwww, i guess you win or wtvr")
+	print("wowwwwwwwww")
+
 
 func _on_toggle_state() -> void:
 	if current_time == 0:
