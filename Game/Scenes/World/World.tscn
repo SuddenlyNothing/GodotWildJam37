@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/World/World.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/World/Levels/Level1.tscn" type="PackedScene" id=2]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="BottomLevelBoundTEMP" type="Position2D" parent="."]
+position = Vector2( 0, 1024 )
+__meta__ = {
+"_gizmo_extents_": 1000.0
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_top = 0
+limit_bottom = 1024
+smoothing_enabled = true
+
+[node name="Level1" parent="." instance=ExtResource( 2 )]
