@@ -4,7 +4,7 @@ extends Area2D
 onready var t := $Tween
 onready var label := $CanvasLayer/Control/M/Label
 
-export(String, MULTILINE) var dialog := "" setget set_text
+export(String, MULTILINE) var dialog := "Guess you forgor" setget set_text
 
 var cps := 25
 
@@ -31,7 +31,6 @@ func _on_Dialog_body_exited(body) -> void:
 
 
 func set_active(val : bool) -> void:
-	label.visible = val
 	if val:
 		var total_chars : float = label.text.length()
 		var duration : float = total_chars/cps
@@ -39,5 +38,7 @@ func set_active(val : bool) -> void:
 		t.interpolate_property(label, "percent_visible", 0, 1, duration)
 		t.start()
 	else:
-		t.remove_all()
+		if t.is_active():
+			yield(t, "tween_all_completed")
 		label.visible_characters = 0
+	label.visible = val
