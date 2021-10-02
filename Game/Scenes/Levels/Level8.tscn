@@ -52,12 +52,12 @@ limit_right = 10240
 limit_bottom = 9000
 smoothing_enabled = true
 
-[node name="Tween" type="Tween" parent="."]
-
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 6000 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 11.0

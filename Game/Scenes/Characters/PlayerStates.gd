@@ -67,7 +67,7 @@ func _enter_state(new_state, old_state) -> void:
 			parent.jump()
 		states.fall:
 			parent.player_animated.play("fall")
-			if old_state == states.walk:
+			if old_state == states.walk or old_state == states.idle:
 				parent.coyote_timer.start()
 		states.walk:
 			parent.player_animated.play("run")
