@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/UI/MainMenu.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/ChangeScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/UI/MainMenu.gd" type="Script" id=3]
 [ext_resource path="res://Assets/UI/Themes/BixTheme.tres" type="Theme" id=4]
+
+[sub_resource type="ImageTexture" id=1]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -74,5 +76,8 @@ margin_bottom = 332.0
 size_flags_horizontal = 4
 text = "Credits"
 next_scene = "res://Scenes/UI/Credits.tscn"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 1 )
 
 [connection signal="pressed" from="ColorRect/MarginContainer/V/V/Button" to="." method="_on_Button_pressed"]
